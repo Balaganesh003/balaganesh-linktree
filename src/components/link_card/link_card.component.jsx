@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
 import {
     FaTwitter,
     FaGithub,
     FaInstagram,
     FaRegEnvelope,
     FaDiscord,
+    FaLinkedin,
 } from 'react-icons/fa'
 import './link_card.styles.css'
 
@@ -39,8 +39,15 @@ const LinkCard = () => {
 
             <a href="https://twitter.com/balaganesh_003">
                 <div className="link-card">
+                    <FaLinkedin className="link-card-icon" />
+                    <p className="link-card-title">linkedIn</p>
+                </div>
+            </a>
+
+            <a href="https://twitter.com/balaganesh_003">
+                <div className="link-card">
                     <FaRegEnvelope className="link-card-icon" />
-                    <p className="link-card-title">Discord</p>
+                    <p className="link-card-title">Email</p>
                 </div>
             </a>
         </div>
