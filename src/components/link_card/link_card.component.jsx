@@ -10,7 +10,7 @@ import './link_card.styles.css'
 
 const LinkCard = () => {
     return (
-        <Fragment>
+        <div className="link-card-container">
             <a href="https://twitter.com/balaganesh_003">
                 <div className="link-card">
                     <FaTwitter className="link-card-icon" />
@@ -43,7 +43,7 @@ const LinkCard = () => {
                     <p className="link-card-title">Discord</p>
                 </div>
             </a>
-        </Fragment>
+        </div>
     )
 }
 
