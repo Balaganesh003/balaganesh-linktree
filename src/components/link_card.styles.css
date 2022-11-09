@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link-card {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0 0 0.8rem rgba(255, 255, 255 0.12);
+    color: #fff;
+}
+
+.link-card-icon {
+    text-align: center;
+    line-height: 4rem;
+    padding: 5px;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.4) translateZ(50px);
+    transition: 0.25s;
+}
+
+.link-card::before {
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: rgb(9, 9, 121);
+    background: linear-gradient(
+        90deg,
+        rgba(9, 9, 121, 1) 0%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    transition: transform 500ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.link-card:hover::before,
+.link-card:focus::before {
+    transform: scaleX(1);
+}
+
+.link-card p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 1rem;
+}
