@@ -17,7 +17,6 @@ export default {
     preview: {
         select: {
             title: 'title',
-            media: 'thumbnail',
         },
     },
 }
