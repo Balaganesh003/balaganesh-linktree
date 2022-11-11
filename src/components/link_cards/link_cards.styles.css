@@ -1,0 +1,7 @@
+.link-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+}

@@ -6,51 +6,60 @@ import {
     FaDiscord,
     FaLinkedin,
 } from 'react-icons/fa'
-import './link_card.styles.css'
 
-const LinkCard = () => {
+import {
+    BaseLinkCard,
+    LinkCardIcon,
+    TwitterLinkCard,
+    InstagramLinkCard,
+    LinkedinLinkCard,
+    EmailLinkCard,
+    DiscordLinkCard,
+    GithubLinkCard,
+} from './link_card.styles'
+
+export const LINKCARD_TYPES = {
+    base: 'base',
+    twitter: 'twitter',
+    github: 'github',
+    instagram: 'instagram',
+    email: 'email',
+    discord: 'discord',
+    linkedin: 'linkedin',
+}
+
+const getLinkCard = (linkCardType) =>
+    ({
+        [LINKCARD_TYPES.twitter]: TwitterLinkCard,
+        [LINKCARD_TYPES.github]: GithubLinkCard,
+        [LINKCARD_TYPES.instagram]: InstagramLinkCard,
+        [LINKCARD_TYPES.email]: EmailLinkCard,
+        [LINKCARD_TYPES.discord]: DiscordLinkCard,
+        [LINKCARD_TYPES.linkedin]: LinkedinLinkCard,
+    }[linkCardType] || BaseLinkCard)
+
+const getLinkCardIcon = (iconName) =>
+    ({
+        [LINKCARD_TYPES.twitter]: <FaTwitter />,
+        [LINKCARD_TYPES.github]: <FaGithub />,
+        [LINKCARD_TYPES.instagram]: <FaInstagram />,
+        [LINKCARD_TYPES.email]: <FaRegEnvelope />,
+        [LINKCARD_TYPES.discord]: <FaDiscord />,
+        [LINKCARD_TYPES.linkedin]: <FaLinkedin />,
+    }[iconName])
+
+const LinkCard = ({ linkCardType, socialLink, socialName }) => {
+    const CustomLinkCard = getLinkCard(linkCardType)
+    const CustomLinkCardIcon = getLinkCardIcon(linkCardType)
     return (
-        <div className="link-card-container">
-            <a href="https://twitter.com/balaganesh_003">
-                <div className="link-card">
-                    <FaTwitter className="link-card-icon" />
-                    <p className="link-card-title">Twitter</p>
-                </div>
-            </a>
-            <a href="https://twitter.com/balaganesh_003">
-                <div className="link-card">
-                    <FaGithub className="link-card-icon" />
-                    <p className="link-card-title">Github</p>
-                </div>
-            </a>
-            <a href="https://twitter.com/balaganesh_003">
-                <div className="link-card">
-                    <FaInstagram className="link-card-icon" />
-                    <p className="link-card-title">Instagram</p>
-                </div>
-            </a>
-
-            <a href="https://twitter.com/balaganesh_003">
-                <div className="link-card">
-                    <FaDiscord className="link-card-icon" />
-                    <p className="link-card-title">Discord</p>
-                </div>
-            </a>
-
-            <a href="https://twitter.com/balaganesh_003">
-                <div className="link-card">
-                    <FaLinkedin className="link-card-icon" />
-                    <p className="link-card-title">linkedIn</p>
-                </div>
-            </a>
-
-            <a href="https://twitter.com/balaganesh_003">
-                <div className="link-card">
-                    <FaRegEnvelope className="link-card-icon" />
-                    <p className="link-card-title">Email</p>
-                </div>
-            </a>
-        </div>
+        <a href={socialLink}>
+            <CustomLinkCard>
+                <LinkCardIcon className="link-card-icon">
+                    {CustomLinkCardIcon}
+                </LinkCardIcon>
+                <p className="link-card-title">{socialName}</p>
+            </CustomLinkCard>
+        </a>
     )
 }
 
