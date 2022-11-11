@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa'
 
 import {
+    LinkCardContainer,
     BaseLinkCard,
     LinkCardIcon,
     TwitterLinkCard,
@@ -52,14 +53,14 @@ const LinkCard = ({ linkCardType, socialLink, socialName }) => {
     const CustomLinkCard = getLinkCard(linkCardType)
     const CustomLinkCardIcon = getLinkCardIcon(linkCardType)
     return (
-        <a href={socialLink}>
+        <LinkCardContainer href={socialLink} target="_blank">
             <CustomLinkCard>
                 <LinkCardIcon className="link-card-icon">
                     {CustomLinkCardIcon}
                 </LinkCardIcon>
                 <p className="link-card-title">{socialName}</p>
             </CustomLinkCard>
-        </a>
+        </LinkCardContainer>
     )
 }
 

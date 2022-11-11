@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const LinkCardContainer = styled.a`
+    text-decoration: none;
+`
+
 export const BaseLinkCard = styled.div`
      {
         display: flex;

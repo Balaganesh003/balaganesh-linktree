@@ -11,7 +11,6 @@ const LinkCards = () => {
         <div className="link-cards-container">
             {LINKTREE_DATA.map((linkCardData) => (
                 <LinkCard
-                    target="_blank"
                     key={linkCardData.id}
                     socialLink={linkCardData.url}
                     socialName={linkCardData.name}
