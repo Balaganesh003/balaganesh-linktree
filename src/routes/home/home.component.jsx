@@ -1,7 +1,4 @@
-import LinkCard, {
-    LINKCARD_TYPES,
-} from '../../components/link_card/link_card.component'
-
+import LinkCards from '../../components/link_cards/link_cards.component'
 import './home.styles.css'
 
 import Header from '../../components/header/header.component'
@@ -13,11 +10,7 @@ const Home = () => {
             <div id="stars2"></div>
             <div id="stars3"></div>
             <Header />
-            <LinkCard
-                socialLink="https://twitter.com/balaganesh_003"
-                socialName="Twitter"
-                linkCardType={LINKCARD_TYPES.twitter}
-            />
+            <LinkCards />
         </section>
     )
 }

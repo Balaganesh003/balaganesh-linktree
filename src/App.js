@@ -4,11 +4,11 @@ import Home from './routes/home/home.component'
 
 import './App.css'
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <Home />
-        </div>
+        <Routes>
+            <Route path="/" element={<Home />} />
+        </Routes>
     )
 }
 
