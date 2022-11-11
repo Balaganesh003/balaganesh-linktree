@@ -111,12 +111,11 @@ export const DiscordLinkCard = styled(BaseLinkCard)`
 
 export const LinkedinLinkCard = styled(BaseLinkCard)`
     &::before {
-        background: #50c9c3;
+        background: rgb(238, 174, 202);
         background: linear-gradient(
-            to right,
-            #50c9c3 0%,
-            #96deda 51%,
-            #50c9c3 100%
+            90deg,
+            rgba(238, 174, 202, 1) 0%,
+            rgba(148, 187, 233, 1) 100%
         );
     }
 `
