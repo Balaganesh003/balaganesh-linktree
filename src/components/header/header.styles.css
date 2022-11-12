@@ -18,3 +18,10 @@ p {
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+.Typewriter {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
