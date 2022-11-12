@@ -4,8 +4,8 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'imgageurl',
-            title: 'ImgURL',
+            name: 'imgUrl',
+            title: 'ImgUrl',
             type: 'image',
             options: {
                 hotspot: true,

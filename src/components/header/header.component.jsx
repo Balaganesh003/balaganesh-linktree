@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import ProfileImg from '../../profileImg.jpg'
+import { client, urlFor } from '../../client.js'
 
 import './header.styles.css'
 const Header = () => {
-    return (
+    const [profileData, setProfileData] = useState([])
+    useEffect(() => {
+        const query = `*[_type == "profile"]`
+        client.fetch(query).then((res) => setProfileData(res))
+    }, [])
+
+    return profileData.map((profile) => (
         <div className="header-container">
-            <img className="header-image" alt="profile" src={ProfileImg} />
-            <p>I am a fronted web developer</p>
+            <img
+                src={urlFor(profile.imgUrl)}
+                className="header-image"
+                alt="profile"
+            />
+            <p>{profile.name}</p>
+            <p>{profile.bio}</p>
         </div>
-    )
+    ))
 }
 
 export default Header
