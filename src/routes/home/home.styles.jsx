@@ -243,7 +243,7 @@ export const Stars = styled.div`
         659px 1860px #fff, 388px 1412px #fff, 1212px 458px #fff,
         755px 1468px #fff, 696px 1654px #fff, 1144px 60px #fff;
 
-    &:after {
+    &::after {
         content: '';
         position: absolute;
         top: 2000px;

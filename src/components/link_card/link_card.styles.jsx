@@ -33,7 +33,6 @@ export const BaseLinkCard = styled.div`
             bottom: 0;
             right: 0;
             z-index: -1;
-
             transition: transform 300ms ease-in-out;
             transform: scaleX(0);
             transform-origin: left;
@@ -49,8 +48,9 @@ export const BaseLinkCard = styled.div`
             p {
                 font-size: 1.3rem;
             }
-            &:focus::before {
-                transform: scaleX(0);
+
+            &::before {
+                transition: none;
             }
         }
 
@@ -64,8 +64,8 @@ export const BaseLinkCard = styled.div`
                 margin: 0 1rem;
             }
 
-            &:focus::before {
-                transform: scaleX(0);
+            &::before {
+                transition: none;
             }
         }
     }
@@ -84,63 +84,104 @@ export const LinkCardIcon = styled.div`
 `
 
 export const TwitterLinkCard = styled(BaseLinkCard)`
-    &::before {
-        background: rgb(9, 9, 121);
-        background: linear-gradient(
-            90deg,
-            rgba(9, 9, 121, 1) 0%,
-            rgba(0, 212, 255, 1) 100%
-        );
+    @media (min-width: 768px) {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(9, 9, 121, 1) 0%,
+                rgba(0, 212, 255, 1) 100%
+            );
+        }
+    }
+
+    @media (max-width: 500px) {
+        &::before {
+            background: none;
+        }
     }
 `
 export const GithubLinkCard = styled(BaseLinkCard)`
-    &::before {
-        background: rgb(19, 98, 53);
-        background: linear-gradient(
-            90deg,
-            rgba(19, 98, 53, 1) 0%,
-            rgba(41, 249, 0, 0.865) 75%
-        );
+    @media (min-width: 768px) {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(19, 98, 53, 1) 0%,
+                rgba(41, 249, 0, 0.865) 75%
+            );
+        }
+    }
+    @media (max-width: 500px) {
+        &::before {
+            background: none;
+        }
     }
 `
 
 export const InstagramLinkCard = styled(BaseLinkCard)`
-    &::before {
-        background: rgb(131, 58, 180);
-        background: linear-gradient(
-            90deg,
-            rgb(149, 39, 222) 5%,
-            rgba(253, 29, 29, 1) 50%,
-            rgba(252, 176, 69, 1) 100%
-        );
+    @media (min-width: 768px) {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgb(149, 39, 222) 5%,
+                rgba(253, 29, 29, 1) 50%,
+                rgba(252, 176, 69, 1) 100%
+            );
+        }
+    }
+
+    @media (max-width: 500px) {
+        &::before {
+            background: none;
+        }
     }
 `
 
 export const EmailLinkCard = styled(BaseLinkCard)`
-    &::before {
-        background-color: #ffe53b;
-        background-image: linear-gradient(90deg, #ffe53b 0%, #ff2525 100%);
+    @media (min-width: 768px) {
+        &::before {
+            background-image: linear-gradient(90deg, #ffe53b 0%, #ff2525 100%);
+        }
+    }
+
+    @media (max-width: 500px) {
+        &::before {
+            background: none;
+        }
     }
 `
 
 export const DiscordLinkCard = styled(BaseLinkCard)`
-    &::before {
-        background: rgb(104, 132, 230);
-        background: linear-gradient(
-            90deg,
-            rgba(104, 132, 230, 1) 0%,
-            rgb(224, 230, 242) 100%
-        );
+    @media (min-width: 768px) {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(104, 132, 230, 1) 0%,
+                rgb(224, 230, 242) 100%
+            );
+        }
+    }
+
+    @media (max-width: 500px) {
+        &::before {
+            background: none;
+        }
     }
 `
 
 export const LinkedinLinkCard = styled(BaseLinkCard)`
-    &::before {
-        background: rgb(238, 174, 202);
-        background: linear-gradient(
-            90deg,
-            rgba(238, 174, 202, 1) 0%,
-            rgba(148, 187, 233, 1) 100%
-        );
+    @media (min-width: 768px) {
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(238, 174, 202, 1) 0%,
+                rgba(148, 187, 233, 1) 100%
+            );
+        }
+    }
+
+    @media (max-width: 500px) {
+        &::before {
+            background: none;
+        }
     }
 `
