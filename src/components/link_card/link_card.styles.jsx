@@ -49,6 +49,9 @@ export const BaseLinkCard = styled.div`
             p {
                 font-size: 1.3rem;
             }
+            &:focus::before {
+                transform: scaleX(0);
+            }
         }
 
         @media (max-width: 400px) {
@@ -59,6 +62,10 @@ export const BaseLinkCard = styled.div`
                 font-size: 1.2rem;
                 font-weight: 500;
                 margin: 0 1rem;
+            }
+
+            &:focus::before {
+                transform: scaleX(0);
             }
         }
     }
