@@ -7,6 +7,8 @@ import {
     FaLinkedin,
 } from 'react-icons/fa'
 
+import { motion } from 'framer-motion'
+
 import {
     LinkCardContainer,
     BaseLinkCard,
@@ -53,14 +55,16 @@ const LinkCard = ({ linkCardType, socialLink, socialName }) => {
     const CustomLinkCard = getLinkCard(linkCardType)
     const CustomLinkCardIcon = getLinkCardIcon(linkCardType)
     return (
-        <LinkCardContainer href={socialLink} target="_blank">
-            <CustomLinkCard>
-                <LinkCardIcon className="link-card-icon">
-                    {CustomLinkCardIcon}
-                </LinkCardIcon>
-                <p className="link-card-title">{socialName}</p>
-            </CustomLinkCard>
-        </LinkCardContainer>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
+            <LinkCardContainer href={socialLink} target="_blank">
+                <CustomLinkCard>
+                    <LinkCardIcon className="link-card-icon">
+                        {CustomLinkCardIcon}
+                    </LinkCardIcon>
+                    <p className="link-card-title">{socialName}</p>
+                </CustomLinkCard>
+            </LinkCardContainer>
+        </motion.div>
     )
 }
 

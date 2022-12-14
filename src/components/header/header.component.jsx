@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { client, urlFor } from '../../client.js'
 import Typewriter from 'typewriter-effect'
+import {
+    HeaderContainer,
+    HeaderImage,
+    HeaderTitle,
+    HeaderName,
+    HeaderSkills,
+    Typewriter as TypewriterStyle,
+} from './header.styles.jsx'
 
-import './header.styles.css'
+import './header.styles.jsx'
 const Header = () => {
     const [profileData, setProfileData] = useState([])
     useEffect(() => {
@@ -11,37 +19,42 @@ const Header = () => {
     }, [])
 
     return profileData.map((profile) => (
-        <div className="header-container">
-            <img
+        <HeaderContainer>
+            <HeaderImage
                 src={urlFor(profile.imgUrl)}
                 className="header-image"
                 alt="profile"
             />
-            <p>{profile.name}</p>
-            <p>{profile.bio}</p>
-            I'm a{' '}
-            <Typewriter
-                className="Typewriter"
-                options={{
-                    autoStart: true,
-                    loop: true,
-                    cursor: 'I',
-                }}
-                onInit={(typewriter) => {
-                    typewriter
-                        .typeString('frontend developer')
-                        .pauseFor(2500)
-                        .deleteAll(200)
-                        .typeString('Student')
-                        .pauseFor(2500)
-                        .deleteAll(200)
-                        .typeString('Aspring fullstack web developer')
-                        .pauseFor(2500)
-                        .deleteAll(200)
-                        .start()
-                }}
-            />
-        </div>
+            <HeaderTitle>Hi, I'm</HeaderTitle>
+            <HeaderName>{profile.name}</HeaderName>
+
+            <HeaderSkills>
+                <p>I'm a </p>
+                <TypewriterStyle>
+                    <Typewriter
+                        options={{
+                            autoStart: true,
+                            loop: true,
+                            delay: 150,
+                            cursor: 'I',
+                        }}
+                        onInit={(typewriter) => {
+                            typewriter
+                                .typeString('frontend developer')
+                                .pauseFor(2500)
+                                .deleteAll('natural')
+                                .typeString('Student')
+                                .pauseFor(2500)
+                                .deleteAll('natural')
+                                .typeString('Python Programmer')
+                                .pauseFor(2500)
+                                .deleteAll('natural')
+                                .start()
+                        }}
+                    />
+                </TypewriterStyle>
+            </HeaderSkills>
+        </HeaderContainer>
     ))
 }
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const LinkCardContainer = styled.a`
     text-decoration: none;
@@ -42,6 +42,24 @@ export const BaseLinkCard = styled.div`
         &:hover::before,
         &:focus::before {
             transform: scaleX(1);
+        }
+
+        @media (max-width: 500px) {
+            width: 20rem;
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            width: 18rem;
+            height: 3.5rem;
+
+            p {
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin: 0 1rem;
+            }
         }
     }
 `

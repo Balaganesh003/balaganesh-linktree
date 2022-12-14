@@ -1,17 +1,17 @@
 import LinkCards from '../../components/link_cards/link_cards.component'
-import './home.styles.css'
+import { Wrapper, Stars2, Stars3, Stars } from './home.styles'
 
 import Header from '../../components/header/header.component'
 
 const Home = () => {
     return (
-        <section className="wrapper">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+        <Wrapper>
+            <Stars />
+            <Stars2 />
+            <Stars3 />
             <Header />
             <LinkCards />
-        </section>
+        </Wrapper>
     )
 }
 

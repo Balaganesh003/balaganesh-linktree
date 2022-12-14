@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import './link_cards.styles.css'
+import './link_cards.styles.jsx'
 import LinkCard, {
     LINKCARD_TYPES,
 } from '../../components/link_card/link_card.component'
 
-import { client } from '../../client.js'
+import { LinkCardsContainer } from './link_cards.styles.jsx'
 
-// import LINKTREE_DATA from '../../linktree-data'
+import { client } from '../../client.js'
 
 const LinkCards = () => {
     const [linkCardsData, setLinkCardsData] = useState([])
@@ -16,7 +16,7 @@ const LinkCards = () => {
     }, [])
 
     return (
-        <div className="link-cards-container">
+        <LinkCardsContainer>
             {linkCardsData.map((linkCardData) => (
                 <LinkCard
                     key={linkCardData.id}
@@ -27,7 +27,7 @@ const LinkCards = () => {
                     }
                 />
             ))}
-        </div>
+        </LinkCardsContainer>
     )
 }
 
