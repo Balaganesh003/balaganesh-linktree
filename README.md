@@ -5,8 +5,6 @@ Tech stacks
 - Framer motion
 - react styled-components 
 
-Do check out the below link and reply ur feedback
-
 Linktree link - https://balaganesh-linktree.netlify.app
 
 
